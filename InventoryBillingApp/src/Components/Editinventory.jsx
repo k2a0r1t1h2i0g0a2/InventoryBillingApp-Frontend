@@ -56,7 +56,7 @@ const EditInventory = () => {
          return;
        }
       const response = await fetch(
-        `http://localhost:8000/api/inventory/edit/${inventoryId}`,
+        `https://inventorybillingapp-fsof.onrender.com/api/inventory/edit/${inventoryId}`,
         {
           method: "PUT",
           headers: {

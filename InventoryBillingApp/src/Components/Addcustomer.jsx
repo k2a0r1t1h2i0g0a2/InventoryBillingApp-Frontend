@@ -24,14 +24,17 @@ const AddCustomer = () => {
         return setErrorMessage("Authentication token is missing!");
       }
 
-      const response = await fetch("http://localhost:8000/api/customer/add", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-auth-token": token,
-        },
-        body: JSON.stringify(customerData),
-      });
+      const response = await fetch(
+        "https://inventorybillingapp-fsof.onrender.com/api/customer/add",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-auth-token": token,
+          },
+          body: JSON.stringify(customerData),
+        }
+      );
 
       const data = await response.json();
 

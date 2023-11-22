@@ -14,13 +14,16 @@ const AddCategory = () => {
  
   const handleAddCategory = async () => {
     try {
-      const response = await fetch("http://localhost:8000/api/category/add", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, description }),
-      });
+      const response = await fetch(
+        "https://inventorybillingapp-fsof.onrender.com/api/category/add",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name, description }),
+        }
+      );
 
       const data = await response.json();
 

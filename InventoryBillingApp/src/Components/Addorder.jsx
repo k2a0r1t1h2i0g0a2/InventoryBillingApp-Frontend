@@ -18,7 +18,7 @@ const AddOrder = () => {
         const token = localStorage.getItem("token");
 
         const customersResponse = await fetch(
-          "http://localhost:8000/api/customer/getallcustomers",
+          "https://inventorybillingapp-fsof.onrender.com/api/customer/getallcustomers",
           {
             headers: {
               "Content-Type": "application/json",
@@ -40,7 +40,7 @@ const AddOrder = () => {
         setCustomers(customersData.data || []);
 
         const itemsResponse = await fetch(
-          "http://localhost:8000/api/inventory/getall",
+          "https://inventorybillingapp-fsof.onrender.com/api/inventory/getall",
           {
             headers: {
               "Content-Type": "application/json",
@@ -88,14 +88,17 @@ const AddOrder = () => {
       };
 
       const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:8000/api/order/add", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-auth-token": token,
-        },
-        body: JSON.stringify(orderData),
-      });
+      const response = await fetch(
+        "https://inventorybillingapp-fsof.onrender.com/api/order/add",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-auth-token": token,
+          },
+          body: JSON.stringify(orderData),
+        }
+      );
 
       const data = await response.json();
 

@@ -27,7 +27,7 @@ const Getallinventory = () => {
     const fetchInventoryItems = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8000/api/inventory/getall"
+          "https://inventorybillingapp-fsof.onrender.com/api/inventory/getall"
         );
         const data = await response.json();
 
@@ -53,7 +53,7 @@ const Getallinventory = () => {
 const handleDelete = async (inventoryId) => {
   try {
     const response = await fetch(
-      `http://localhost:8000/api/inventory/delete/${inventoryId}`,
+      `https://inventorybillingapp-fsof.onrender.com/api/inventory/delete/${inventoryId}`,
       {
         method: "DELETE",
         headers: {

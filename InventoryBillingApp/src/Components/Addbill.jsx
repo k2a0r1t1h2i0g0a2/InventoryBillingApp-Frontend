@@ -20,12 +20,15 @@ const Addbill = () => {
           throw new Error("Authentication token is missing!");
         }
 
-        const response = await fetch("http://localhost:8000/api/order/getall", {
-          headers: {
-            "Content-Type": "application/json",
-            "x-auth-token": token,
-          },
-        });
+        const response = await fetch(
+          "https://inventorybillingapp-fsof.onrender.com/api/order/getall",
+          {
+            headers: {
+              "Content-Type": "application/json",
+              "x-auth-token": token,
+            },
+          }
+        );
 
         const data = await response.json();
 
@@ -52,14 +55,17 @@ const Addbill = () => {
         throw new Error("Authentication token is missing!");
       }
 
-      const response = await fetch("http://localhost:8000/api/bill/create", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-auth-token": token,
-        },
-        body: JSON.stringify({ orderId: selectedOrderId }),
-      });
+      const response = await fetch(
+        "https://inventorybillingapp-fsof.onrender.com/api/bill/create",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-auth-token": token,
+          },
+          body: JSON.stringify({ orderId: selectedOrderId }),
+        }
+      );
 
       const data = await response.json();
 

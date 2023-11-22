@@ -30,13 +30,16 @@ const Signup = () => {
   const handleSignup = async () => {
     try {
       const payload = { username, email, password };
-      const res = await fetch("http://localhost:8000/api/user/signup", {
-        method: "POST",
-        body: JSON.stringify(payload),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const res = await fetch(
+        "https://inventorybillingapp-fsof.onrender.com/api/user/signup",
+        {
+          method: "POST",
+          body: JSON.stringify(payload),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       const data = await res.json();
 
       if (data.token) {

@@ -27,7 +27,7 @@ const Getallorder = () => {
           throw new Error("Authentication token is missing!");
         }
         const response = await fetch(
-          "http://localhost:8000/api/order/getall",
+          "https://inventorybillingapp-fsof.onrender.com/api/order/getall",
           {
             headers: {
               "Content-Type": "application/json",
@@ -59,7 +59,7 @@ const Getallorder = () => {
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        `http://localhost:8000/api/order/delete/${orderId}`,
+        `https://inventorybillingapp-fsof.onrender.com/api/order/delete/${orderId}`,
         {
           method: "DELETE",
           headers: {

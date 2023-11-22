@@ -21,7 +21,9 @@ const Addinventory = () => {
       useEffect(() => {
         const fetchCategories = async () => {
          
-          const response = await fetch("http://localhost:8000/api/category/getall");
+          const response = await fetch(
+            "https://inventorybillingapp-fsof.onrender.com/api/category/getall"
+          );
           const data = await response.json();
           setCategories(data.categories);
         };
@@ -30,19 +32,22 @@ const Addinventory = () => {
       }, []);
   const handleAddInventoryItem = async () => {
     try {
-      const response = await fetch("http://localhost:8000/api/inventory/add", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name,
-          description,
-          price,
-          quantity,
-          category,
-        }),
-      });
+      const response = await fetch(
+        "https://inventorybillingapp-fsof.onrender.com/api/inventory/add",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            description,
+            price,
+            quantity,
+            category,
+          }),
+        }
+      );
 
       const data = await response.json();
 

@@ -34,7 +34,7 @@ const Getallcustomer = () => {
        }
 
        const response = await fetch(
-         "http://localhost:8000/api/customer/getallcustomers",
+         "https://inventorybillingapp-fsof.onrender.com/api/customer/getallcustomers",
          {
            headers: {
              "x-auth-token": token,
@@ -68,7 +68,7 @@ const handleDelete = async (customerId) => {
   try {
      const token = localStorage.getItem("token");
     const response = await fetch(
-      `http://localhost:8000/api/customer/delete/${customerId}`,
+      `https://inventorybillingapp-fsof.onrender.com/api/customer/delete/${customerId}`,
       {
         method: "DELETE",
         headers: {
@@ -102,8 +102,7 @@ const handleDelete = async (customerId) => {
     <Base title=" Customers">
       {loading && <CircularProgress />}
       {error && <Typography color="error">{error}</Typography>}
-      {/* {loading && <p>Loading...</p>}
-      {!loading && customers.length === 0 && <p>No customers found.</p>} */}
+    
       {!loading &&  (
         <div>
           {customers.map((customer) => (

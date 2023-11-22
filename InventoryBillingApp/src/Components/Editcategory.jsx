@@ -36,7 +36,7 @@ const EditCategory = () => {
     try {
       if (id) {
         const response = await fetch(
-          `http://localhost:8000/api/category/edit/${id}`,
+          `https://inventorybillingapp-fsof.onrender.com/api/category/edit/${id}`,
           {
             method: "PUT",
             headers: {

@@ -29,13 +29,16 @@ const [successMessage,setSuccessmessage] = useState("")
   const handleLogin = async () => {
     try {
       const payload = { email, password };
-      const res = await fetch("http://localhost:8000/api/user/login", {
-        method: "POST",
-        body: JSON.stringify(payload),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const res = await fetch(
+        "https://inventorybillingapp-fsof.onrender.com/api/user/login",
+        {
+          method: "POST",
+          body: JSON.stringify(payload),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       const data = await res.json();
   
 

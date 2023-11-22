@@ -28,12 +28,15 @@ const Getallbill = () => {
              throw new Error("Authentication token is missing!");
            }
 
-           const response = await fetch("http://localhost:8000/api/bill/get", {
-             headers: {
-               "Content-Type": "application/json",
-               "x-auth-token": token,
-             },
-           });
+           const response = await fetch(
+             "https://inventorybillingapp-fsof.onrender.com/api/bill/get",
+             {
+               headers: {
+                 "Content-Type": "application/json",
+                 "x-auth-token": token,
+               },
+             }
+           );
 
            const data = await response.json();
 
@@ -79,7 +82,7 @@ pdf.internal.pageSize.setHeight(pdfHeight);
      const token = localStorage.getItem("token");
 
      const response = await fetch(
-       `http://localhost:8000/api/bill/delete/${billId}`,
+       `https://inventorybillingapp-fsof.onrender.com/api/bill/delete/${billId}`,
        {
          method: "DELETE",
          headers: {

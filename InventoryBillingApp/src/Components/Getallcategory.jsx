@@ -23,7 +23,7 @@ const Getallcategory = () => {
     const fetchCategories = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8000/api/category/getall"
+          "https://inventorybillingapp-fsof.onrender.com/api/category/getall"
         );
         const data = await response.json();
 
@@ -44,7 +44,7 @@ const Getallcategory = () => {
 const handleDelete = async (categoryId) => {
   try {
     const response = await fetch(
-      `http://localhost:8000/api/category/delete/${categoryId}`,
+      `https://inventorybillingapp-fsof.onrender.com/api/category/delete/${categoryId}`,
       {
         method: "DELETE",
         headers: {

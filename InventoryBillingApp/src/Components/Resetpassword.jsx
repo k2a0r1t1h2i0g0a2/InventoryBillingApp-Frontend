@@ -30,13 +30,16 @@ const ResetPassword = () => {
         newpassword: newPassword,
         confirmpassword: confirmPassword,
       };
-      const res = await fetch("http://localhost:8000/api/user/resetPassword", {
-        method: "POST",
-        body: JSON.stringify(payload),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const res = await fetch(
+        "https://inventorybillingapp-fsof.onrender.com/api/user/resetPassword",
+        {
+          method: "POST",
+          body: JSON.stringify(payload),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       const data = await res.json();
       if (data.message) {
           setSuccessMessage(data.message);
