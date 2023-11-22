@@ -101,6 +101,7 @@ const handleDelete = async (inventoryId) => {
           {inventoryItems.map((item, index) => (
             <Paper elevation={6} key={index}>
               <p>Name:{item.name}</p>
+              <p>Description:{item.description}</p>
               <p>Price:{item.price}</p>
               <p>Quantity:{item.quantity}</p>
               <p>Date:{item.date}</p>
