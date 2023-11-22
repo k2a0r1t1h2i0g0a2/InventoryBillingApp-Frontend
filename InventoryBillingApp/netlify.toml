@@ -1,4 +1,4 @@
-[[redirect]]
+[[redirects]]
 
 from = "/*"
 to = "/index.html"
@@ -6,7 +6,3 @@ status = 200
 
 
 
-[[redirects]]
-  from = "/404.html"
-  to = "/index.html"
-  status = 404
