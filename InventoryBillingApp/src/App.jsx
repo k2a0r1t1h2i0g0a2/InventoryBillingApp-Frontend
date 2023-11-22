@@ -16,7 +16,7 @@ import Addinventory from "./Components/Addinventory.jsx"
 import Addcustomer from './Components/Addcustomer.jsx';
 import Addorder from './Components/Addorder.jsx';
 import Addbill from './Components/Addbill.jsx';
-import Base from './Base/Base.jsx';
+
 const App = () => {
 
   

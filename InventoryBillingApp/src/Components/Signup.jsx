@@ -76,7 +76,7 @@ const Signup = () => {
           variant="outlined"
           value={username}
           sx={{ mr: 2 }}
-          type={showPassword ? "text" : "password"}
+      
           fullWidth
           style={{ marginTop: "20px" }}
           InputProps={{
