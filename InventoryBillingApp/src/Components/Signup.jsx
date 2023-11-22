@@ -44,9 +44,10 @@ const Signup = () => {
       if (data.token) {
         setErr("");
         localStorage.setItem("token", data.token);
-      
+      navigate("/login");
       } else if (data.success) {
         setSuccessmessage(data.message);
+        
       } else {
         setErr(data.error);
       }
