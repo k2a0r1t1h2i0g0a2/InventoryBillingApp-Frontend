@@ -72,7 +72,7 @@ const Signup = () => {
             <Avatar
               alt="User"
               sx={{ width: 100, height: 100 }}
-              src="/src/user badge.jpeg"
+              src="/src/user.jpg"
             />{" "}
           </Stack>
         </Box>
