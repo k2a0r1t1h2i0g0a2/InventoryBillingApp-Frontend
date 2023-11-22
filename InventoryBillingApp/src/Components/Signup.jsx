@@ -8,8 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { Button} from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
 import { Box } from "@mui/material";
-import Avatar from "@mui/material/Avatar";
-import Stack from "@mui/material/Stack";
+
 const Signup = () => {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
@@ -68,13 +67,7 @@ const Signup = () => {
             height: "100%",
           }}
         >
-          <Stack>
-            <Avatar
-              alt="User"
-              sx={{ width: 100, height: 100 }}
-              src="/src/user.jpg"
-            />{" "}
-          </Stack>
+         
         </Box>
         <TextField
           id="outlined-basic-username"
