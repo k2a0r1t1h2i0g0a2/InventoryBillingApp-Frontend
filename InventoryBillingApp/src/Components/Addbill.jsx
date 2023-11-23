@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Base from "../Base/Base.jsx";
 import { Button,MenuItem,Select,Typography ,Box ,Alert,CircularProgress} from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { format } from "date-fns";
 const Addbill = () => {
   const [orders, setOrders] = useState([]);
   const [selectedOrderId, setSelectedOrderId] = useState("");
@@ -10,7 +11,7 @@ const Addbill = () => {
  const [loading, setLoading] = useState(false);
  const [error, setError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
-
+ const [success, setSuccess] = useState(false); 
   const navigate = useNavigate();
   useEffect(() => {
     const fetchOrders = async () => {
@@ -72,18 +73,19 @@ const Addbill = () => {
       if (response.ok) {
         setMessage(data.message);
         setBill(data.bill);
-          setSuccessMessage("Bills created successfully");
+        setSuccessMessage("Bills created successfully");
+         setSuccess(true);
       } else {
         setMessage(data.error || "Error creating bill");
         setBill(null);
          setError("");
-         setSuccess(true);
+         setSuccess(false);
       }
     } catch (error) {
       console.error("Error occurred:", error);
       setMessage("An error occurred while creating the bill");
       setBill(null);
-     
+      setSuccess(false);
     } finally {
       setLoading(false);
     }
@@ -93,7 +95,6 @@ const Addbill = () => {
    <Base>
      <label>Select Order:</label>
      <Select
-      
        fullWidth
        value={selectedOrderId}
        onChange={(e) => setSelectedOrderId(e.target.value)}
@@ -158,7 +159,10 @@ const Addbill = () => {
            </div>
          ))}
          <Typography>Total Amount: {bill.totalAmount}</Typography>
-         <Typography>Date: {bill.date}</Typography>
+         <Typography>
+           {" "}
+           Date: {format(new Date(bill.date), "yyyy-MM-dd HH:mm:ss")}
+         </Typography>
        </div>
      )}
    </Base>

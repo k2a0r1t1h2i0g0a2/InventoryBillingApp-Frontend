@@ -7,7 +7,7 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useNavigate } from "react-router-dom";
 import { red } from "@mui/material/colors";
-
+import { format } from "date-fns";
 
 const Getallbill = () => {
      const [bills, setBills] = useState([]);
@@ -114,7 +114,7 @@ setTimeout(() => {
       <Base title="Bills">
         {loading && <CircularProgress />}
         {error && <Typography color="error">{error}</Typography>}
-        {!loading &&  (
+        {!loading && (
           <div>
             {bills.map((bill) => (
               <Paper key={bill._id} id="bill-content">
@@ -132,7 +132,9 @@ setTimeout(() => {
                   ))}
                 </ul>
                 <p>Total Amount: {bill.totalAmount}</p>
-                <p>Date: {bill.date}</p>
+                <p>
+                  Date: {format(new Date(bill.date), "yyyy-MM-dd HH:mm:ss")}
+                </p>
                 <Button onClick={() => handleDownloadPDF(bill)}>
                   Download Bill
                 </Button>

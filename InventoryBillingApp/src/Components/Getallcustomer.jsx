@@ -11,7 +11,7 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import { useNavigate } from "react-router-dom";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { red } from "@mui/material/colors";
-
+import { format } from "date-fns";
 
 const Getallcustomer = () => {
   const [customers, setCustomers] = useState([]);
@@ -102,8 +102,8 @@ const handleDelete = async (customerId) => {
     <Base title=" Customers">
       {loading && <CircularProgress />}
       {error && <Typography color="error">{error}</Typography>}
-    
-      {!loading &&  (
+
+      {!loading && (
         <div>
           {customers.map((customer) => (
             <Paper key={customer._id}>
@@ -111,7 +111,7 @@ const handleDelete = async (customerId) => {
               <p>Email: {customer.email}</p>
               <p>Address: {customer.address}</p>
               <p>Phone Number: {customer.phoneNumber}</p>
-              <p>Date:{customer.date}</p>
+              <p>Date: {format(new Date(customer.date), "yyyy-MM-dd HH:mm:ss")}</p>
               <Box
                 sx={{
                   display: "flex",
@@ -137,15 +137,13 @@ const handleDelete = async (customerId) => {
             }}
           >
             {" "}
-           
-              <IconButton
-                onClick={() => {
-                  navigate("/addcustomer");
-                }}
-              >
-                <AddCircleIcon color="success" sx={{ fontSize: 40 }} />
-              </IconButton>
-            
+            <IconButton
+              onClick={() => {
+                navigate("/addcustomer");
+              }}
+            >
+              <AddCircleIcon color="success" sx={{ fontSize: 40 }} />
+            </IconButton>
           </Box>
         </div>
       )}

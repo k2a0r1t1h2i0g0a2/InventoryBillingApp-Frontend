@@ -5,7 +5,7 @@ import { Typography, CircularProgress, Paper, Box, IconButton } from "@mui/mater
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { red } from "@mui/material/colors";
-
+import { format } from "date-fns";
 
 
 const Getallorder = () => {
@@ -96,7 +96,7 @@ setTimeout(() => {
       <Base title="Orders">
         {loading && <CircularProgress />}
         {error && <Typography color="error">{error}</Typography>}
-        {!loading &&  (
+        {!loading && (
           <div>
             {orders.map((order) => (
               <Paper key={order._id}>
@@ -106,6 +106,9 @@ setTimeout(() => {
                     <p>Email: {order.customer.email}</p>
                     <p>Address: {order.customer.address}</p>
                     <p>Phone Number: {order.customer.phoneNumber}</p>
+                    <p>
+                      Date: {format(new Date(order.customer.date), "yyyy-MM-dd HH:mm:ss")}
+                    </p>
                   </React.Fragment>
                 )}
 

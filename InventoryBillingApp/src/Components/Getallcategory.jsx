@@ -7,7 +7,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import { Box } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { red} from "@mui/material/colors";
-
+import { format } from "date-fns";
 
 const Getallcategory = () => {
   const [categories, setCategories] = useState([]);
@@ -87,7 +87,9 @@ const handleDelete = async (categoryId) => {
               <Paper elevation={6} key={index}>
                 <p> Name:{data.name}</p>
                 <p> Description:{data.description}</p>
-                <p> Date:{data.date}</p>
+                <p>
+                  Date: {format(new Date(data.date), "yyyy-MM-dd HH:mm:ss")}
+                </p>
                 <Box
                   sx={{
                     display: "flex",
@@ -126,10 +128,7 @@ const handleDelete = async (categoryId) => {
               navigate("/addcategory");
             }}
           >
-            <AddCircleIcon
-              color="success"
-              sx={{ fontSize: 40 }}
-            />
+            <AddCircleIcon color="success" sx={{ fontSize: 40 }} />
           </IconButton>
         </Box>
       </Base>

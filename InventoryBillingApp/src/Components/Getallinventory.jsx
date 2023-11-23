@@ -10,7 +10,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { red } from "@mui/material/colors";
 import { useNavigate } from "react-router-dom";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
-
+import { format } from "date-fns";
 
 const Getallinventory = () => {
   const [inventoryItems, setInventoryItems] = useState([]);
@@ -104,7 +104,7 @@ const handleDelete = async (inventoryId) => {
               <p>Description:{item.description}</p>
               <p>Price:{item.price}</p>
               <p>Quantity:{item.quantity}</p>
-              <p>Date:{item.date}</p>
+              <p>Date: {format(new Date(item.date), "yyyy-MM-dd HH:mm:ss")}</p>
               <Box
                 sx={{
                   display: "flex",
