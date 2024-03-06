@@ -72,7 +72,7 @@ const [successMessage,setSuccessmessage] = useState("")
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <EmailIcon style={{ color: "white" }} />
+                <EmailIcon style={{ color: "#ec407a" }} />
               </InputAdornment>
             ),
           }}
@@ -101,9 +101,9 @@ const [successMessage,setSuccessmessage] = useState("")
                   edge="end"
                 >
                   {showPassword ? (
-                    <VisibilityIcon style={{ color: "white" }} />
+                    <VisibilityIcon style={{ color: "#ec407a" }} />
                   ) : (
-                    <VisibilityOffIcon style={{ color: "white" }} />
+                    <VisibilityOffIcon style={{ color: "#ec407a" }} />
                   )}
                 </IconButton>
               </InputAdornment>

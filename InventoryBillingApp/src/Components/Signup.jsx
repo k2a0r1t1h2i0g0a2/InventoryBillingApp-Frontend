@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Base from "../Base/Base.jsx";
-import { TextField, InputAdornment, IconButton, Alert } from "@mui/material";
+import { TextField, InputAdornment, IconButton, Alert ,Typography } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
@@ -67,16 +67,13 @@ const Signup = () => {
             justifyContent: "center",
             height: "100%",
           }}
-        >
-         
-        </Box>
+        ></Box>
         <TextField
           id="outlined-basic-username"
           label="Username"
           variant="outlined"
           value={username}
           sx={{ mr: 2 }}
-      
           fullWidth
           style={{ marginTop: "20px" }}
           InputProps={{
@@ -84,7 +81,7 @@ const Signup = () => {
 
             endAdornment: (
               <InputAdornment position="end">
-                <PersonIcon style={{ color: "white" }} />
+                <PersonIcon style={{ color: "#ec407a" }} />
               </InputAdornment>
             ),
           }}
@@ -105,7 +102,7 @@ const Signup = () => {
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <EmailIcon style={{ color: "white" }} />
+                <EmailIcon style={{ color: "#ec407a" }} />
               </InputAdornment>
             ),
           }}
@@ -135,9 +132,9 @@ const Signup = () => {
                   edge="end"
                 >
                   {showPassword ? (
-                    <VisibilityIcon style={{ color: "white" }} />
+                    <VisibilityIcon style={{ color: "#ec407a" }} />
                   ) : (
-                    <VisibilityOffIcon style={{ color: "white" }} />
+                    <VisibilityOffIcon style={{ color: "#ec407a" }} />
                   )}
                 </IconButton>
               </InputAdornment>
@@ -163,6 +160,13 @@ const Signup = () => {
           sx={{ backgroundColor: "#ec407a" }}
         >
           Signup
+        </Button>
+
+        <Button
+          style={{ marginTop: "20px" }}
+          onClick={() => navigate("/login")}
+        >
+          Click here to login
         </Button>
       </Box>
 

@@ -1,5 +1,5 @@
-import React from 'react';
-import { AppBar, IconButton, Toolbar, Typography } from "@mui/material"
+import React from "react";
+import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
 
 import DashboardSharpIcon from "@mui/icons-material/DashboardSharp";
 import PeopleSharpIcon from "@mui/icons-material/PeopleSharp";
@@ -11,21 +11,17 @@ import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
 import VpnKeySharpIcon from "@mui/icons-material/VpnKeySharp";
 import { Box } from "@mui/material";
-import { useNavigate } from 'react-router-dom';
-import "../style/style.css"
+import { useNavigate } from "react-router-dom";
+import "../style/style.css";
 
 const Base = ({ title, children }) => {
-
-
-
   const handleLogout = () => {
-    localStorage.removeItem("token")
-    navigate("/login")
-  }
-const navigate = useNavigate();
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
+  const navigate = useNavigate();
   return (
-    <div className='wrapper'>
-      
+    <div className="wrapper">
       <header>
         <AppBar sx={{ backgroundColor: "#ec407a" }} position="relative">
           <Toolbar variant="dense">
@@ -43,7 +39,7 @@ const navigate = useNavigate();
               <IconButton
                 edge="start"
                 color="#e91e63"
-                onClick={() => navigate("/")}
+                onClick={() => navigate("/home")}
                 aria-label="dashboard"
                 sx={({ mr: 20 }, { fontSize: 20 })}
               >
@@ -104,10 +100,10 @@ const navigate = useNavigate();
                 <ReceiptIcon />
                 Bills
               </IconButton>{" "}
-              <IconButton
+              {/* <IconButton
                 edge="start"
                 color="#e91e63"
-                onClick={() => navigate("/signup")}
+                onClick={() => navigate("/")}
                 aria-label="signup"
                 sx={({ mr: 5 }, { fontSize: 20 })}
               >
@@ -125,7 +121,7 @@ const navigate = useNavigate();
                 {" "}
                 <VpnKeySharpIcon />
                 Login
-              </IconButton>
+              </IconButton> */}
               <IconButton
                 edge="start"
                 color="#e91e63"

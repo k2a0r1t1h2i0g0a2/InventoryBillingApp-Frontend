@@ -20,7 +20,9 @@ const EditInventory = () => {
   useEffect(() => {
     const fetchCategories = async () => {
    
-      const response = await fetch("http://localhost:8000/api/category/getall");
+      const response = await fetch(
+        "https://inventorybillingapp-fsof.onrender.com/api/category/getall"
+      );
       const data = await response.json();
       setCategories(data.categories);
     };
@@ -29,7 +31,7 @@ const EditInventory = () => {
 
     const fetchInventoryItem = async () => {
       const response = await fetch(
-        `http://localhost:8000/api/inventory/edit/${inventoryId}`
+        `https://inventorybillingapp-fsof.onrender.com/api/inventory/edit/${inventoryId}`
       );
       const data = await response.json();
 
