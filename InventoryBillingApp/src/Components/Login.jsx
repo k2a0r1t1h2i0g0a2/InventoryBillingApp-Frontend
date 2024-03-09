@@ -45,7 +45,7 @@ const [successMessage,setSuccessmessage] = useState("")
       if (data.token) {
         setErr("");
         localStorage.setItem("token", data.token);
-        navigate("/");
+        navigate("/home");
       } else if (data.success) {
         setSuccessmessage(data.message);
       } else {
