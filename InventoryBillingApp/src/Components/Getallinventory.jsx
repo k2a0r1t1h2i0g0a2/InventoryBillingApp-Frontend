@@ -69,9 +69,9 @@ const handleDelete = async (inventoryId) => {
         prevInventories.filter((inventory) => inventory.id !== inventoryId)
       );
 
-      setTimeout(() => {
-        window.location.reload();
-      }, 1000);
+      // setTimeout(() => {
+      //   window.location.reload();
+      // }, 1000);
       console.log(data.message);
     } else {
       setError(data.error || "Error deleting inventory");

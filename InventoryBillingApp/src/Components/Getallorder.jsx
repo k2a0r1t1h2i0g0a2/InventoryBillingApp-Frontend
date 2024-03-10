@@ -75,9 +75,9 @@ const Getallorder = () => {
         setOrders((prevOrders) =>
           prevOrders.filter((order) => order.id !== orderId)
         );
-setTimeout(() => {
-  window.location.reload();
-}, 1000);
+// setTimeout(() => {
+//   window.location.reload();
+// }, 1000);
         console.log(data.message);
       } else {
         setError(data.error || "Error deleting order");
