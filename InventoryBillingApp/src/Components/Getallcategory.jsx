@@ -64,7 +64,7 @@ const handleDelete = async (categoryId) => {
 
         
          
-           window.location.reload();
+           //window.location.reload();
        
       console.log(data.message); 
     } else {

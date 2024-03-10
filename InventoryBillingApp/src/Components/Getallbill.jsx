@@ -97,7 +97,7 @@ pdf.internal.pageSize.setHeight(pdfHeight);
      if (response.ok) {
        setBills((prevBills) => prevBills.filter((bill) => bill._id !== billId));
 
- window.location.reload();
+ //window.location.reload();
 
        console.log(data.message);
      } else {

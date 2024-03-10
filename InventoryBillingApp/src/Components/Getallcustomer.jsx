@@ -85,7 +85,7 @@ const handleDelete = async (customerId) => {
         prevCustomers.filter((customer) => customer._id !== customerId)
       );
   
-       window.location.reload();
+       //window.location.reload();
     
     
       console.log(data.message);
