@@ -84,10 +84,10 @@ const handleDelete = async (customerId) => {
       setCustomers((prevCustomers) =>
         prevCustomers.filter((customer) => customer._id !== customerId)
       );
-
-      // setTimeout(() => {
-      //   window.location.reload();
-      // }, 1000);
+  
+       window.location.reload();
+    
+    
       console.log(data.message);
     } else {
       setError(data.error || "Error deleting inventory");

@@ -63,9 +63,9 @@ const handleDelete = async (categoryId) => {
           
 
         
-          // setTimeout(() => {
-          //   window.location.reload();
-          // }, 1000);
+         
+           window.location.reload();
+       
       console.log(data.message); 
     } else {
       setError(data.error || "Error deleting category");
