@@ -76,7 +76,9 @@ const Getallorder = () => {
           prevOrders.filter((order) => order.id !== orderId)
         );
 
-   //window.location.reload();
+  setTimeout(() => {
+    window.location.reload();
+  }, 500);
 
         console.log(data.message);
       } else {

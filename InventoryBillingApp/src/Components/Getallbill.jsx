@@ -97,8 +97,9 @@ pdf.internal.pageSize.setHeight(pdfHeight);
      if (response.ok) {
        setBills((prevBills) => prevBills.filter((bill) => bill._id !== billId));
 
- //window.location.reload();
-
+ setTimeout(() => {
+   window.location.reload();
+ }, 500);
        console.log(data.message);
      } else {
        setError(data.error || "Error deleting bill");

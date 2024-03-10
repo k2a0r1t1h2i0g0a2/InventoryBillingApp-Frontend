@@ -70,7 +70,9 @@ const handleDelete = async (inventoryId) => {
       );
 
       
-       //  window.location.reload();
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
      
       console.log(data.message);
     } else {
